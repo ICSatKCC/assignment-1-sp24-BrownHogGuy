@@ -71,13 +71,16 @@ public class Fish {
     s = s + "\nBody color: " + this.bodyColor;
     s = s + "\nFin color: " + this.finColor;
     s = s + "\nFood: " + this.food;
+
     double inches = this.length / MM_TO_INCHES;
     // https://stackoverflow.com/questions/2808535/round-a-double-to-2-decimal-places
-    String sInches = String.format("%.2f", inches);
-    s = s + "\nLength: " + sInches + "in";
+    String stringInches = String.format("%.2f", inches);
+    s = s + "\nLength: " + stringInches + "in";
+
     double pounds = this.weight / GRAMS_TO_POUNDS;
-    String sPounds = String.format("%.2f", pounds);
-    s = s + "\nWeight: " + sPounds + "lbs";
+    String stringPounds = String.format("%.2f", pounds);
+    s = s + "\nWeight: " + stringPounds + "lbs";
+
     return s;
   }
 
@@ -115,7 +118,7 @@ public class Fish {
   }
 
   public void setFinColor() {
-    this.finColor= finColor;
+    this.finColor = finColor;
   }
 
   public void setFood() {
@@ -127,16 +130,18 @@ public class Fish {
   }
   
   /** Credits for helping me figure out double convertion an power.
-   *
+   * <p>
    * How to find powers in java.
    * https://ioflood.com/blog/math-pow-java/#:~:text=Function%20in%20Java%3F-,The%20Math.,pow(base%2C%20exponent)%3B%20.
-   *
+   * </p>
+   * <p>
    * How to convert double to integer in java. (I used to be in ICS111)
    * https://www.geeksforgeeks.org/convert-double-to-integer-in-java/
+   * </p>
    */
   public void setWeight() {
     double temp = 0.00001 * Math.pow(this.length, 3);
-    this.weight = (int)temp;
+    this.weight = (int) temp;
   }
 
 }
