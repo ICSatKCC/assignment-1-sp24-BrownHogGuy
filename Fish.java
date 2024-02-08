@@ -7,141 +7,141 @@ import java.util.Random;        // https://www.geeksforgeeks.org/generating-rand
  */
 
 public class Fish {
-  private String name;
-  private String bodyColor;
-  private String finColor;
-  private String food;
-  private int length;
-  private int weight;
+   private String name;
+   private String bodyColor;
+   private String finColor;
+   private String food;
+   private int length;
+   private int weight;
 
-  private static final double MM_TO_INCHES = 25.4;
-  private static final double GRAMS_TO_POUNDS = 453.6;
-  // Test the Class
-  // public static void main(String[] args){
-  //    //System.out.println("Hello Tuna");
-  //    Fish carp = new Fish("carp", "red", "red", "bread", 100);
-  //    Fish parc = new Fish("parc", "blue", "blue", "meat");
-  //    System.out.println(carp);
-  //    System.out.println(parc);
-  //}
+   private static final double MM_TO_INCHES = 25.4;
+   private static final double GRAMS_TO_POUNDS = 453.6;
+   // Test the Class
+   // public static void main(String[] args){
+   //    //System.out.println("Hello Tuna");
+   //    Fish carp = new Fish("carp", "red", "red", "bread", 100);
+   //    Fish parc = new Fish("parc", "blue", "blue", "meat");
+   //    System.out.println(carp);
+   //    System.out.println(parc);
+   //}
 
-  /** Constructs the distinct characteristics of a fish for the Fish class.
-   *
-   * @param name The name of the fish
-   * @param bodyColor the color of the fish
-   * @param finColor the fin color of the fish
-   * @param food what the fish eats
-   * @param length the length of the fish
-   */
-  public Fish(String name, String bodyColor, String finColor, String food, int length) {
-    // System.out.println("Fish constructor 1");
-    this.name = name;
-    this.bodyColor = bodyColor;
-    this.finColor = finColor;
-    this.food = food;
-    this.length = length;
-    setWeight();
-  }
+   /** Constructs the distinct characteristics of a fish for the Fish class.
+    *
+    * @param name The name of the fish
+    * @param bodyColor the color of the fish
+    * @param finColor the fin color of the fish
+    * @param food what the fish eats
+    * @param length the length of the fish
+    */
+   public Fish(String name, String bodyColor, String finColor, String food, int length) {
+      // System.out.println("Fish constructor 1");
+      this.name = name;
+      this.bodyColor = bodyColor;
+      this.finColor = finColor;
+      this.food = food;
+      this.length = length;
+      setWeight();
+   }
 
-  /** Constructs the distinct characteristics of a fish for the Fish class but randomized length.
-   *
-   * @param name The name of the fish
-   * @param bodyColor the color of the fish
-   * @param finColor the fin color of the fish
-   * @param food what the fish eats
-   */
-  public Fish(String name, String bodyColor, String finColor, String food) {
-    // System.out.println("Fish constructor 2");
-    this.name = name;
-    this.bodyColor = bodyColor;
-    this.finColor = finColor;
-    this.food = food;
-    Random rand = new Random();
-    this.length = rand.nextInt(1000) + 1;
-    setWeight();
-  }
-  
-  /** toString Method displaying the attributes of a fish.
-   *
-   * @return a String
-   */
-  public String toString() {
-    String s = "";
-    s = "Fish type: " + this.name;
-    s = s + "\nBody color: " + this.bodyColor;
-    s = s + "\nFin color: " + this.finColor;
-    s = s + "\nFood: " + this.food;
+   /** Constructs the distinct characteristics of a fish for the Fish class but randomized length.
+    *
+    * @param name The name of the fish
+    * @param bodyColor the color of the fish
+    * @param finColor the fin color of the fish
+    * @param food what the fish eats
+    */
+   public Fish(String name, String bodyColor, String finColor, String food) {
+      // System.out.println("Fish constructor 2");
+      this.name = name;
+      this.bodyColor = bodyColor;
+      this.finColor = finColor;
+      this.food = food;
+      Random rand = new Random();
+      this.length = rand.nextInt(1000) + 1;
+      setWeight();
+   }
 
-    double inches = this.length / MM_TO_INCHES;
-    // https://stackoverflow.com/questions/2808535/round-a-double-to-2-decimal-places
-    String stringInches = String.format("%.2f", inches);
-    s = s + "\nLength: " + stringInches + "in";
+   /** toString Method displaying the attributes of a fish.
+    *
+    * @return a String
+    */
+   public String toString() {
+      String s = "";
+      s = "Fish type: " + this.name;
+      s = s + "\nBody color: " + this.bodyColor;
+      s = s + "\nFin color: " + this.finColor;
+      s = s + "\nFood: " + this.food;
 
-    double pounds = this.weight / GRAMS_TO_POUNDS;
-    String stringPounds = String.format("%.2f", pounds);
-    s = s + "\nWeight: " + stringPounds + "lbs";
+      double inches = this.length / MM_TO_INCHES;
+      // https://stackoverflow.com/questions/2808535/round-a-double-to-2-decimal-places
+      String stringInches = String.format("%.2f", inches);
+      s = s + "\nLength : " + stringInches + " in";
 
-    return s;
-  }
+      double pounds = this.weight / GRAMS_TO_POUNDS;
+      String stringPounds = String.format("%.2f", pounds);
+      s = s + "\nWeight: " + stringPounds + " lbs\n";
 
-  public String getName() {
-    return this.name;
-  }
+      return s;
+   }
 
-  public String getBodyColor() {
-    return this.bodyColor;
-  }
+   public String getName() {
+      return this.name;
+   }
 
-  public String getFinColor() {
-    return this.finColor;
-  }
+   public String getBodyColor() {
+      return this.bodyColor;
+   }
 
-  public String getFood() {
-    return this.food;
-  }
+   public String getFinColor() {
+      return this.finColor;
+   }
 
-  public int getLength() {
-    return this.length;
-  }
+   public String getFood() {
+      return this.food;
+   }
 
-  public int getWeight() {
-    return this.weight;
-  }
+   public int getLength() {
+      return this.length;
+   }
+
+   public int getWeight() {
+      return this.weight;
+   }
 
 
-  public void setName() {
-    this.name = name;
-  }
+   public void setName(String name) {
+      this.name = name;
+   }
 
-  public void setBodyColor() {
-    this.bodyColor = bodyColor;
-  }
+   public void setBodyColor(String bodyColor) {
+      this.bodyColor = bodyColor;
+   }
 
-  public void setFinColor() {
-    this.finColor = finColor;
-  }
+   public void setFinColor(String finColor) {
+      this.finColor = finColor;
+   }
 
-  public void setFood() {
-    this.food = food;
-  }
+   public void setFood(String food) {
+      this.food = food;
+   }
 
-  public void setLength() {
-    this.length = length;
-  }
-  
-  /** Credits for helping me figure out double convertion an power.
-   * <p>
-   * How to find powers in java.
-   * https://ioflood.com/blog/math-pow-java/#:~:text=Function%20in%20Java%3F-,The%20Math.,pow(base%2C%20exponent)%3B%20.
-   * </p>
-   * <p>
-   * How to convert double to integer in java. (I used to be in ICS111)
-   * https://www.geeksforgeeks.org/convert-double-to-integer-in-java/
-   * </p>
-   */
-  public void setWeight() {
-    double temp = 0.00001 * Math.pow(this.length, 3);
-    this.weight = (int) temp;
-  }
+   public void setLength(int length) {
+      this.length = length;
+      setWeight();
+   }
 
+   /** Credits for helping me figure out double convertion an power.
+    * <p>
+    * How to find powers in java.
+    * https://ioflood.com/blog/math-pow-java/#:~:text=Function%20in%20Java%3F-,The%20Math.,pow(base%2C%20exponent)%3B%20.
+    * </p>
+    * <p>
+    * How to convert double to integer in java. (I used to be in ICS111)
+    * https://www.geeksforgeeks.org/convert-double-to-integer-in-java/
+    * </p>
+    */
+   public void setWeight() {
+      double temp = 0.00001 * Math.pow(this.length, 3);
+      this.weight = (int) temp;
+   }
 }
